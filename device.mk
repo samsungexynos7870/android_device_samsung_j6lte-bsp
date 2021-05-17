@@ -16,29 +16,25 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-LOCAL_PATH := device/samsung/gtaxlwifi
+LOCAL_PATH := device/samsung/j6lte
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-PRODUCT_CHARACTERISTICS := tablet
+PRODUCT_CHARACTERISTICS := phone
 
-PRODUCT_SHIPPING_API_LEVEL := 23
-
-PRODUCT_PROPERTY_OVERRIDES := \
-    ro.carrier=wifi-only
+PRODUCT_SHIPPING_API_LEVEL := 26
 
 # Properties
 -include $(LOCAL_PATH)/system_prop.mk
 
-# Device uses high-density artwork where available
+# Graphics
 PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := hdpi
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
+PRODUCT_AAPT_PREBUILT_DPI := xhdpi hdpi
 
 # Boot animation
-TARGET_SCREEN_WIDTH := 1200
-TARGET_SCREEN_HEIGHT := 1920
-TARGET_BOOTANIMATION_PRELOAD := true
-TARGET_BOOTANIMATION_TEXTURE_CACHE := true
+TARGET_SCREEN_WIDTH := 720
+TARGET_SCREEN_HEIGHT := 1480
 
 # first_stage_mount
 PRODUCT_COPY_FILES += \
@@ -264,6 +260,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/gpio-keys.kl \
     $(LOCAL_PATH)/configs/keylayout/sec_touchscreen.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/sec_touchscreen.kl
+    $(LOCAL_PATH)/configs/keylayout/sec_touchkey.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/sec_touchkey.kl
+
 
 # Touchscreen
 PRODUCT_COPY_FILES += \
@@ -330,4 +328,4 @@ $(call inherit-product, hardware/samsung_slsi/exynos5/empty.mk)
 $(call inherit-product, hardware/samsung_slsi/exynos7870/empty.mk)
 
 # call the proprietary setup
-$(call inherit-product, vendor/samsung/gtaxlwifi/gtaxlwifi-vendor.mk)
+$(call inherit-product, vendor/samsung/j6lte/j6lte-vendor.mk)

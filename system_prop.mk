@@ -41,7 +41,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.disable_backpressure=1
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=240 \
+    ro.sf.lcd_density=320 \
     lockscreen.rot_override=true
 
 # Disable more Codec2.0 components
@@ -50,15 +50,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # ro.product.first_api_level indicates the first api level the device has commercially launched on.
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.product.first_api_level=23
-
-# Radio
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.radio.noril=yes
-
-# Treble
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.media.treble_omx=false
+    ro.product.first_api_level=26
 
 # sdcardfs
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -67,10 +59,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0
-
-# Charger
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.charger.enable_suspend=true
 
 # FIFO UI scheduling
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -83,3 +71,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Set fdsan to the warn_once severity level
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.fdsan=warn_once
+
+# Fix for echo in calls
+PRODUCT_PROPERTY_OVERRIDES += \
+    audio_hal.disable_two_mic=false

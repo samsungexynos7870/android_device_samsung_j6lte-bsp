@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/samsung/gtaxlwifi
+LOCAL_PATH := device/samsung/j6lte
 
 BUILD_BROKEN_DUP_RULES := true
 
@@ -56,7 +56,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 
 TARGET_LINUX_KERNEL_VERSION := 3.18
 TARGET_KERNEL_SOURCE := kernel/samsung/exynos7870
-TARGET_KERNEL_CONFIG := lineage-gtaxlwifi_defconfig
+TARGET_KERNEL_CONFIG := lineage-j6lte_defconfig
 
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 
@@ -68,14 +68,18 @@ BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
 BOARD_KERNEL_IMAGE_NAME := Image
 
 # Partitions
-BOARD_BOOTIMAGE_PARTITION_SIZE     := 33554432
+BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432
+BOARD_CACHEIMAGE_PARTITION_SIZE := 209715200
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 39845888
-BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 3072000000
-#original system size = 3565158400, but some times device had diff system size (us-eu), better decrease a bit
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 10737418240
-BOARD_CACHEIMAGE_PARTITION_SIZE    := 209715200
-BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE  := ext4
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2571279104
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 54618209280
+BOARD_VENDORIMAGE_PARTITION_SIZE := 314596224
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 4096
+TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
+BOARD_ROOT_EXTRA_FOLDERS := efs cpefs
 
 # Use these flags if the board has a ext4 partition larger than 2gb
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -85,7 +89,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # Vendor separation
-TARGET_COPY_OUT_VENDOR := system/vendor
+TARGET_COPY_OUT_VENDOR := vendor
 
 # Audio
 USE_XML_AUDIO_POLICY_CONF := 1
@@ -212,34 +216,14 @@ BOARD_ROOT_EXTRA_FOLDERS := efs
 #RECOVERY_VARIANT := twrp
 BOARD_HAS_DOWNLOAD_MODE := true
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/fstab.samsungexynos7870
-TARGET_OTA_ASSERT_DEVICE := gtaxlwifi,gtaxllte
-
-# TWRP
-ifeq ($(RECOVERY_VARIANT),twrp)
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/twrp.fstab
-TW_THEME := portrait_hdpi
-TW_BRIGHTNESS_PATH := /sys/class/backlight/panel/brightness
-TW_MAX_BRIGHTNESS := 255
-TW_DEFAULT_BRIGHTNESS := 162
-TW_NO_REBOOT_BOOTLOADER := true
-TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_NTFS_3G := true
-TW_HAS_DOWNLOAD_MODE := true
-TW_NO_EXFAT_FUSE := true
-TW_EXCLUDE_SUPERSU := true
-TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
-RECOVERY_SDCARD_ON_DATA := true
-BOARD_HAS_NO_REAL_SDCARD := true
-TW_USE_TOOLBOX=true
-TW_EXCLUDE_TWRPAPP := true
-endif
+TARGET_OTA_ASSERT_DEVICE := j6lte,j6ltecis,j6ltexx,j6lteub,j6lteins,j6ltedtvvj,j6ltekx,j6ltedx
 
 # Shims: camera
 TARGET_LD_SHIM_LIBS += \
     /system/lib/libexynoscamera.so|libexynoscamera_shim.so
 
-# Vendor security patch level - T580XXS5CTD1
-VENDOR_SECURITY_PATCH := 2020-04-01
+# Vendor security patch level - J600FN
+VENDOR_SECURITY_PATCH := 2020-12-01
 
 SELINUX_IGNORE_NEVERALLOWS := true
 
@@ -247,4 +231,4 @@ SELINUX_IGNORE_NEVERALLOWS := true
 BOARD_VENDOR_SEPOLICY_DIRS := $(LOCAL_PATH)/sepolicy
 
 # Inherit from the proprietary version
--include vendor/samsung/gtaxlwifi/BoardConfigVendor.mk
+-include vendor/samsung/j6lte/BoardConfigVendor.mk

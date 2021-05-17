@@ -15,10 +15,10 @@
 
 
 VENDOR=samsung
-DEVICE=gtaxlwifi
-DEVICE_COMMON=gtaxlwifi
+DEVICE=j6lte
+DEVICE_COMMON=j6lte
 
-export INITIAL_COPYRIGHT_YEAR=2017
+export INITIAL_COPYRIGHT_YEAR=2018
 
 # Load extractutils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
@@ -37,7 +37,7 @@ fi
 setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" true
 
 # Copyright headers and guards
-write_headers "gtaxlwifi"
+write_headers "j6lte"
 
 # The standard blobs
 write_makefiles "$MY_DIR"/proprietary-files.txt true

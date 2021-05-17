@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <device name="Android">
     <item name="none">0</item>
-    <item name="screen.on">180</item>
-    <item name="screen.full">750</item>
+    <item name="screen.on">77</item>
+    <item name="screen.full">326</item>
     <item name="bluetooth.on">1</item>
     <item name="bluetooth.active">102</item>
     <item name="wifi.on">1</item>
     <item name="wifi.scan">184</item>
     <item name="wifi.active">208</item>
-    <item name="gps.on">1</item>
-    <item name="dsp.audio">36</item>
-    <item name="dsp.video">530</item>
-    <item name="camera.flashlight">280</item>
-    <item name="camera.avg">800</item>
-    <item name="radio.active">151</item>
-    <item name="radio.scanning">89</item>
+    <item name="gps.on">39</item>
+    <item name="audio">40</item>
+    <item name="video">168</item>
+    <item name="camera.avg">473</item>
+    <item name="camera.flashlight">80</item>
+    <item name="radio.active">141</item>
+    <item name="radio.scanning">98</item>
     <array name="radio.on">
-        <value>6.11</value>
-        <value>6.11</value>
+        <value>5.8</value>
+        <value>5.8</value>
     </array>
     <array name="cpu.core_speeds.cluster0">
+        <value>1794000</value>
         <value>1690000</value>
         <value>1586000</value>
         <value>1482000</value>
@@ -32,10 +33,9 @@
         <value>757000</value>
         <value>676000</value>
         <value>546000</value>
-        <value>449000</value>
-        <value>343000</value>
     </array>
     <array name="cpu.core_speeds.cluster1">
+        <value>1794000</value>
         <value>1690000</value>
         <value>1586000</value>
         <value>1482000</value>
@@ -48,11 +48,9 @@
         <value>757000</value>
         <value>676000</value>
         <value>546000</value>
-        <value>449000</value>
-        <value>343000</value>
     </array>
-    <item name="cpu.suspend">1.94</item>
-    <item name="cpu.idle">17.5</item>
+    <item name="cpu.suspend">2.5</item>
+    <item name="cpu.idle">20</item>
     <array name="cpu.core_power.cluster0">
         <value>100</value>
         <value>93</value>
@@ -79,11 +77,7 @@
         <value>56</value>
         <value>51</value>
     </array>
-    <array name="cpu.clusters.cores">
-        <value>4</value>
-        <value>4</value>
-    </array>
-    <item name="battery.capacity">7300</item>
+    <item name="battery.capacity">3000</item>
     <array name="wifi.batchedscan">
         <value>.0002</value>
         <value>.002</value>
