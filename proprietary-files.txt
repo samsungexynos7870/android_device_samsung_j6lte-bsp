@@ -1,19 +1,9 @@
-# Firmware - from T585XXS6CTJ7
-etc/firmware/Data.msc
-etc/firmware/bdwlan30.bin
-etc/firmware/bdwlan32.bin
-etc/firmware/otp30.bin
-etc/firmware/qwlan30.bin
-etc/firmware/qwlan30_ibss.bin
-etc/firmware/utf30.bin
-etc/firmware/utfbd30.bin
-etc/firmware/utfbd32.bin
+# Firmware - from J600FN
 vendor/firmware/fimc_is_lib.bin
 vendor/firmware/mfc_fw.bin
 vendor/firmware/setfile_4h5yc.bin
 vendor/firmware/setfile_sr259.bin
-vendor/firmware/nvm_tlv_tf_1.1.bin
-vendor/firmware/rampatch_tlv_tf_1.1.tlv
+vendor/firmware/bcm43436B0_V0086.0137.hcd
 
 # Mali graphics - r28p0 - from the 9.0 SM-A720S stock firmware
 vendor/lib/egl/libGLES_mali.so
@@ -91,6 +81,3 @@ vendor/lib/libvndsecril-client.so
 vendor/lib/libfloatingfeature.so
 vendor/lib/libLifevibes_lvverx.so
 vendor/lib/libLifevibes_lvvetx.so
-
-# wcnss_filter - for Bluetooth - from the stock 7.1.1 firmware - T580XXU3BRF1
-vendor/bin/wcnss_filter
